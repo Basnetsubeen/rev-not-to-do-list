@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const apiEP = "http://localhost:8000/api/v1/task/";
+const apiEP =
+  process.env.NODE_ENV === "production"
+    ? " "
+    : "http://localhost:8000/api/v1/task/";
 
 //Give all the tasks
 export const fetchTasks = async () => {
